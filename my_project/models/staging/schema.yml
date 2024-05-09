@@ -16,7 +16,13 @@ source:
       
       - name: sales
         columns:
-          - name:
+          - name: order_number
+            tests:
+              - not_null
+          
+          - name: productkey
+            tests:
+              - not_null
       
       - name: stores
         columns:
