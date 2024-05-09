@@ -1,21 +1,41 @@
-
 version: 2
 
-models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+source:
+  - name: raw
+    database: dataset
+    schema: public
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+    tables:
+      - name: customers
+        columns:
+          - name: customerkey
+            description: "unique identifier for each customer"
+            tests:
+              - unique
+              - not_null
+      
+      - name: sales
+        columns:
+          - name:
+      
+      - name: stores
+        columns:
+          - name: storekey
+            description: "unique identifier for each store"
+            tests:
+              - unique
+              - not_null
+      
+      - name: products
+        columns:
+          - name: productkey
+            description: "unique identifier for each product"
+            tests:
+              - unique
+              - not_null
+      
+      - name: data_dictionary
+        description: "information for each column from every table"
+
+      - name: exchange_rates
+        description: "information for currency exchange"

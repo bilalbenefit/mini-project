@@ -1,0 +1,56 @@
+version: 2
+
+models:
+
+  - name: stg_customers
+    description: "Staging model for customers"
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_data_dictionaries
+    description: "Staging model for data dictionaries"
+    columns:
+      - name: data_dictionary_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_exchange_rates
+    description: "Staging model for exchange rates"
+    columns:
+      - name: exchange_rates_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_sales
+    description: "Staging model for sales"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_number
+            - product_id
+    
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+  
+  - name: stg_stores
+    description: "Staging model for stores"
+    columns:
+      - name: store_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_products
+    description: "Staging model for products"
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
