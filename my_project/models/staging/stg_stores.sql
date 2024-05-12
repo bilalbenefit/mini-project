@@ -1,5 +1,5 @@
 select
-    storekey::number as store_id
+    storekey::int as store_id
     , country as store_country
     , state as store_state
     , square_meters as store_wide

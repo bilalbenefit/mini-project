@@ -1,5 +1,5 @@
 select
-    customerkey::number as customer_id
+    customerkey::int as customer_id
     , gender as customer_gender
     , name as customer_name
     , city as customer_city
